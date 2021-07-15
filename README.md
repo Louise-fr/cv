@@ -1,6 +1,6 @@
 # Portfolio & CV 
 
-Creating a using Vue as frontend and Express as backend
+Creating a Portfolio using Vue as frontend and Express as backend
 
 
 ## Project setup for frontend
