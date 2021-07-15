@@ -2,6 +2,7 @@ client/.DS_Store
 client/node_modules
 client/dist
 client/assets/vendor
+client/Texte
 server/node_modules
 server/credentials/credentials.json
 server/credentials/token.json
