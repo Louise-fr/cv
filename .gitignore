@@ -1,6 +1,13 @@
-.DS_Store
-node_modules
-/dist
+client/.DS_Store
+client/node_modules
+client/dist
+client/assets/vendor
+server/node_modules
+server/credentials/credentials.json
+server/credentials/token.json
+Piana Orsini
+piana-orsini.fr
+cv-fresquet.fr
 
 # local env files
 .env.local

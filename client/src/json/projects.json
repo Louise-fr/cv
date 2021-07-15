@@ -1,0 +1,79 @@
+{
+    "1":
+    {
+        "resume": "Le site en question permet de mettre en valeur un bien immobilier pour un service de location. Le principe est d'afficher certains éléments visuels (des photographies du lieu) ainsi que des points positifs liés au bien en guise d'arguments marketing. Un formulaire permet de contacter le propriétaire du lieu si le visiteur du site est intéressé.\nTechniquement, il a permis de se familiariser avec la technologie VueJS en récupérant un thème CSS libre de droit mais disponible d'un seul bloc (c'est-à-dire que le code entier de ce thème est disponible sur un seul fichier HTML auquel on a agrémenté quelques éléments CSS et JS). Il a donc fallu subdiviser le code en fichiers .vue (pour la création de components et de views propres à VueJS). Côté serveur, il a permis de se familiariser avec Express, pour la gestion des routes et de l'envoi d'email.",
+        "techno": ["vuejs","html","css", "node","gmail","js","npm","nginx"],
+        "detail": [
+            { "type": "text", "content": "On utilise le gestionnaire de packages NPM qui nous permettra d'installer les bibliothèques Javascript (front-end et back-end) nécessaires au développements de nos sites web.\nOn utilise <a href='https://cli.vuejs.org/guide/'>Vue-CLI</a> comme utilitaire de développement des projets VueJS. \nL'arborescence du projet est un dossier consistant en un fichier package.json détaillant la configuration du projet (script, dépendances des packages, configuration ESLint...) et de deux sous-dossiers : 'client' pour la gestion côté browser du site, et 'server' pour la gestion des emails.\nLe contenu du dossier 'client' est généré par l'appel de commande de création de projet Vue CLI."},
+            { "type": "code", "title": "Arborescence simplifiée du projet", "content": "+---client\n|   +---dist\n|   |   +---css\n|   |   +---fonts\n|   |   +---img\n|   |   +---js\n|   +---public\n|   +---src\n|       +---assets\n|       |   +---color\n|       |   +---css\n|       |   +---font-awesome\n|       |   |   +---css\n|       |   |   +---fonts\n|       |   |   +---less\n|       |   |   +---scss\n|       |   +---fonts\n|       |   +---img\n|       |   |   +---icons\n|       |   |   +---icons louise\n|       |   |   +---team\n|       |   |   +---works\n|       |   +---imgtest\n|       |   +---js\n|       +---components\n|       +---router\n|       +---views\n+---server\n    +---credentials","codeClass":"python"},
+            { "type": "title", "content": "Front "},
+            { "type": "text", "content": "On utilise le thème CSS <a href='https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/'>Squadfree</a>, auquel on apporte les modifications suivantes : \n"},
+            { "type": "text", "content": "• Subdiviser des éléments du site en fichiers Vue (Views et Components) :"},
+            { "type": "code", "title": "Views et Components","content": "+---src\n|   +---assets\n|   |   +--- ...\n|   +---components\n|   |   +---FormChoice.vue\n|   |   +---FormChoiceFields.vue\n|   +---router\n|   |   +---index.js\n|   +---views\n|   |   +---Home.vue\n|   |   +---NotFound.vue\n|   +---App.vue\n|   +---main.js","codeClass":"python"},
+            { "type": "text", "content": "Pour que les effets visuels en Javascript soient intégrés correctement au projet, on utilise <a href='http://browserify.org/'>Browserify</a> qui nous permet de générer un fichier bundle.js, qui contient toutes les bibliothèques et scripts personnalisés. On y fait référence dans 'index.html' et on l'ajoute dans le dossier racine 'public'.","codeClass":"python"},
+            { "type": "code", "title": "Position du fichier bundle.js","content": "+---client\n|   +---...\n|   +---public\n|   |   +---bundle.js\n|   |   +---index.html\n|   +--- ...\n+---server"},
+            { "type": "code", "title": "Référence au fichier bundle dans index.html ","content": "<head>\n ...\n    <script type='text/javascript' src='<%= BASE_URL %>bundle.js'></script>\n</head>", "codeClass": "html"},
+            { "type": "text", "content": "• Insérer les images du lieu que l'on souhaite mettre en valeur :"},
+            { "type": "img", "content": "vitrine/main.png"},
+            { "type": "text", "content": "• Insérer un <a href='https://getbootstrap.com/docs/4.3/components/carousel/'>carrousel</a> :" },
+            { "type": "img", "content": "vitrine/carousel.jpg"},
+            { "type": "text", "content": "• Gérer les routes (notamment les erreurs 404) :"},
+            { "type": "img", "content": "vitrine/404.jpg"},
+            { "type": "text", "content": "• Insérer un  <a href='https://bootstrap-datepicker.readthedocs.io/en/latest/''>calendrier Bootstrap</a> dynamique :"},
+            { "type": "img", "content": "vitrine/datepicker.jpg"},
+            { "type": "text", "content": "Une fois le formulaire rendu dynamique, il ne reste qu'à le rendre fonctionnel avec la gestion des emails côté serveur."},
+            { "type": "title", "content": "Back "},
+            { "type": "text", "content": "Une fois l'interface terminée, on met en place un serveur Express : "},
+            { "type": "code", "title": "","content": "+---server\n  +---credentials\n  |   +---credentials.json\n  |   +---email-admin.html\n  |   +---email-user.html\n  |   +---googleAPIAuth.js\n  |   +---token.json\n  +---index.js", "codeClass": "python"},
+            { "type": "text", "content": "Celui-ci servira notamment à utiliser la bibliothèque API Gmail Javascript pour s'authentifier au compte gmail créé spécifiquement pour le besoin du site, de façon à envoyer deux email, le premier adressé au visiteur, lui confirmant la bonne réception de sa demande, le deuxième pour le propriétaire du logement, lui faisant part de la demande du visiteur avec toutes les informations transmises."},
+            { "type": "img", "content": "vitrine/mail1.jpg"},
+            { "type": "img", "content": "vitrine/mail2.jpg"},
+            { "type": "text", "content": "On met en place une route '/send-email' qui est utilisée pour communiquer les informations du formulaire envoyé depuis le navigateur jusqu'au serveur, celui-ci se chargeant d'envoyer les deux emails de manière immédiate.\n"},
+            { "type": "text", "content": "Un message apparaît côté navigateur pour confirmer l'envoi."},
+            { "type": "img", "content": "vitrine/merci.jpg"},
+            { "type": "title", "content": "Mise en place du serveur"},
+            { "type": "text", "content": "Le site est hébergé sur un serveur VPS OVH, qui est également utilisé pour les autres projets Web. On installe Nginx sur le serveur pour la gestion des redirections HTTP. On loue également un nom de domaine spécifique pour le site. On applique enfin l'utilitaire <a href='https://certbot.eff.org/'>certbot</a> qui permet de sécuriser par protocole SSL les échanges effectués entre le navigateur et le serveur lors de l'envoi des l'informations par le formulaire."}
+        ],
+        "bilan": "La création de ce site Web a permis de connaître la technologie VueJS, notamment avec l'utilitaire Vue-CLI basée sur Webpack. Les difficultés sont venues de la gestion des versions des bibliothèques Javascript qui sont anciennes (dues au template CSS qui datait) et qui rentraient en conflit avec des bibliothèques VueJS plus récentes. Cependant on a vu qu'il est possible de faire coexister plusieurs versions d'un même utilitaire."
+    },
+    "2":
+    {
+        "resume": "mon projet 2 consite à ...",
+        "techno": ["vuejs"],
+        "detail": [
+            {"type": "text", "content": "mon content"},
+            {"type": "text", "content": "moncontent.jpg"}
+        ],
+        "bilan": "mon bilan"
+    },
+    "3":
+    {
+        "resume": "mon projet 3 consite à ...",
+        "techno": ["vuejs"],
+        "detail": [
+            {"type": "text", "content": "mon content"},
+            {"type": "img", "content": "moncontent.jpg"}
+        ],
+        "bilan": "mon bilan"
+    },
+    "4":
+    {
+        "resume": "mon projet 4 consite à ...",
+        "techno": ["vuejs"],
+        "detail": [
+            {"type": "text", "content": "mon content"},
+            {"type": "img", "content": "moncontent.jpg"}
+        ],
+        "bilan": "mon bilan"
+    },
+    "5":
+    {
+        "resume": "mon projet 5 consite à ...",
+        "techno": ["vuejs"],
+        "detail": [
+            {"type": "text", "content": "mon content"},
+            {"type": "img", "content": "moncontent.jpg"}
+        ],
+        "bilan": "mon bilan"
+    }
+}

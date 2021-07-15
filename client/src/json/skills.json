@@ -1,0 +1,19 @@
+{
+    "Web": [
+        {"name": "Framework Vue JS", "value": 75, "level":"Autonome"},
+        {"name": "Framework Django", "value": 75, "level":"Autonome"},
+        {"name": "Javascript (Front)", "value": 100, "level":"Confirmé"},
+        {"name": "HTML", "value": 100, "level":"Confirmé"},
+        {"name": "CSS", "value": 75, "level":"Autonome"},
+        {"name": "Express", "value": 75, "level":"Autonome"},
+        {"name": "NPM", "value": 75, "level":"Autonome"},
+        {"name": "Webpack", "value": 75, "level":"Autonome"}
+    ],
+    "Data": [
+        {"name": "Python (Général)", "value": 100, "level":"Confirmé"},
+        {"name": "SQL", "value": 75, "level":"Autonome"},
+        {"name": "ScikitLearn", "value": 75, "level":"Autonome"},
+        {"name": "TensorFlow", "value": 75, "level":"Autonome"},
+        {"name": "Numpy et Panda", "value": 75, "level":"Autonome"}
+    ]
+}

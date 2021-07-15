@@ -1,0 +1,11 @@
+{
+    "vuejs": {"fullName": "Vue JS", "link":"https://vuejs.org/" ,"logo": "https://img.icons8.com/windows/32/000000/vuejs.png"},
+    "python": {"fullName": "Python 3", "link":"https://www.python.org/" ,"logo": "https://img.icons8.com/metro/26/000000/python.png"},
+    "html": {"fullName": "HTML", "link":"https://developer.mozilla.org/fr/docs/Web/HTML" ,"logo": "https://img.icons8.com/ios-glyphs/30/000000/html-5.png"},
+    "css": {"fullName": "CSS", "link":"https://developer.mozilla.org/fr/docs/Web/CSS" ,"logo": "https://img.icons8.com/ios-glyphs/30/000000/css3.png"},
+    "node": {"fullName": "Node JS", "link":"https://nodejs.org/en/" ,"logo": "https://img.icons8.com/windows/32/000000/nodejs.png"},
+    "gmail": {"fullName": "Gmail API", "link":"https://developers.google.com/gmail/api" ,"logo": "https://img.icons8.com/carbon-copy/60/000000/api.png"},
+    "npm": {"fullName": "NPM", "link":"https://www.npmjs.com/" ,"logo": "https://img.icons8.com/windows/32/000000/npm.png"},
+    "js": {"fullName": "Javascript", "link":"https://developer.mozilla.org/fr/docs/Web/JavaScript" ,"logo": "https://img.icons8.com/ios/32/000000/javascript.png"},
+    "nginx": {"fullName": "Nginx", "link":"https://www.nginx.com/" ,"logo": "https://img.icons8.com/color/48/000000/nginx.png"}
+}
