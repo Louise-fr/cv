@@ -3,7 +3,7 @@
 Creating a using Vue as frontend and Express as backend
 
 
-## Project setup
+## Project setup for frontend
 ```
 npm install
 ```
